@@ -1,1 +1,5 @@
 __pycache__
+Dockerfile
+fly.toml
+.github
+fly-deploy.yml

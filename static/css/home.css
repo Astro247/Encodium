@@ -25,12 +25,12 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 1rem;
     border-left: 5px solid #fffb00;
+    width: 37rem;
 }
 
 .title h1 {
     color: white;
     margin: 0;
-    width: 15rem;
     font-size: 10rem;
 }
 
