@@ -1,0 +1,126 @@
+body {
+    background-image: url(../images/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 13rem;
+    padding: 0;
+    margin-bottom: 15rem;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    margin-left: 0rem;
+    align-items: start;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 1rem;
+    border-left: 5px solid #fffb00;
+}
+
+.title h1 {
+    color: white;
+    margin: 0;
+    width: 15rem;
+    font-size: 10rem;
+}
+
+.title h3 {
+    color: rgba(255, 255, 255, 0.521);
+    margin: 0;
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.logo img {
+    margin-left: 5rem;
+}
+
+.description-container {
+    background-color: rgb(39, 39, 39);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.description-p {
+    display: flex;
+    flex-direction: column;
+}
+
+.description-p p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    font-size: 2rem;
+}
+
+#openMenu {
+    align-self: center;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 10px;
+    background-color: rgb(189, 189, 189);
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+#openMenu:hover {
+    box-shadow: 0 0 20px rgba(255, 217, 0, 0.89);
+    background-color: yellow;
+}
+
+#openMenu:active {
+    box-shadow: 0 0 20px rgba(255, 217, 0, 0.685);
+    background-color: rgb(255, 208, 0);
+}
+
+.endHome {
+    background-color: black;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+.endTitle {
+    font-size: 1.5rem;
+    font-family: Tahoma, sans-serif;
+    color: rgba(255, 255, 0, 0.849);
+    padding: 0;
+    margin: 5px;
+    margin-left: 0;
+    border-bottom: solid 1.5px rgb(255, 196, 0)
+}
+
+.info {
+    color: rgb(175, 175, 175);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.info a {
+    color: rgb(175, 175, 175);
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.info a:hover {
+    color: white;
+    text-shadow: 0px 0px 5px rgb(179, 179, 179);
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}

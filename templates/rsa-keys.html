@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 id="titleName">RSA keys Generator</h1>
+<div class="outerContainer">
+    <div class="innerContainer">
+        <div class="container-inputs">
+            <div class="inputs">
+                <h3>Input:</h3>
+                <input id="primeA" type="text" placeholder="Prime number A..">
+                <input id="primeB" type="text" placeholder="Prime number B..">
+            </div>
+            <div class="outputs">
+                <h3>Output:</h3>
+                <input id="pubKey" type="text" placeholder="Public key.." readonly>
+                <input id="prvKey" type="text" placeholder="Private key.." readonly>
+            </div>
+        </div>
+        <div class="posButton">
+            <button id="generateKeysButton">Generate Keys</button>
+        </div>
+    </div>
+</div>
+<div class="explanation-container">
+    <div class="explanation-p">
+        <p>
+            The RSA method is used to compute the public and private keys in an asymmetric cryptography system.
+            The keys are represented by two pairs of values.
+        </p>
+
+        <p>
+            The first step consists of choosing two random prime numbers that are different from each other:
+            <span class="a">a</span> and <span class="b">b</span>.
+        </p>
+
+        <p>
+            Next, you need to calculate the product <span class="n">n</span> of the two prime numbers.
+            The product <span class="n">n</span> is the first element of the value pair in both keys.
+        </p>
+
+        <h2> $$ n = a \cdot b $$ </h2>
+
+        <p>
+            If someone wanted to recover the private key using the product <span class="n">n</span> shown in the
+            public
+            key,
+            the only way to do so would be to guess both prime factors used to compute <span class="n">n</span>.
+            However,
+            since these are prime numbers and typically very large, this process becomes extremely time-consuming.
+        </p>
+
+        <p>
+            Then, to compute both keys, it's necessary to calculate <span class="phi">φ(<span
+                    class="n">n</span>)</span>, which is the
+            number
+            of positive integers less than <span class="n">n</span>
+            that have only one common divisor with <span class="n">n</span>, called "coprimes".
+        </p>
+
+        <p>
+            The public key component <span class="e">e</span> is that coprime <span class="p">p</span> between 1 and
+            <span class="phi">φ(<span class="n">n</span>)</span>,
+            excluding the endpoints,
+            while the private key component <span class="d">d</span> is the number <span class="p">p</span> that,
+            when multiplied by <span class="e">e</span> and
+            then taken module <span class="phi">φ(<span class="n">n</span>)</span>, gives a remainder of 1.
+        </p>
+
+        <h2> $$ e \rightarrow 1 \lt p \lt \phi(n) $$</h2>
+
+        <h2> $$ d \rightarrow (p \cdot e) \:\: mod \:\: \phi(n) $$</h2>
+
+        <p>
+            Therefore, the keys are:
+        </p>
+
+        <ul>
+            <li>Public key — (<span class="n">n</span>, <span class="e">e</span>)</li>
+            <br>
+            <li>Private key — (<span class="n">n</span>, <span class="d">d</span>)</li>
+        </ul>
+    </div>
+</div>
+<!--Import MathJax (Latex)-->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="{{ url_for('static', filename='js/rsa-keys-title.js') }}"></script>
+<script src="{{ url_for('static', filename='js/rsa-keys.js') }}"></script>
+{% endblock content %}

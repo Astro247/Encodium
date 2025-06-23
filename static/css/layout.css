@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.toggle {
+    /* Menu's icon style */
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 1001;
+    /* The icon goes over the menu */
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.705);
+    transition: color 0.3s ease, translate 0.3s ease, text-shadow 0.3s ease;
+    /* hides smoothly the menu */
+}
+
+.toggle:hover {
+    color: white;
+    text-shadow: 0px 0px 5px rgb(179, 179, 179);
+    transition: color 0.3s ease, translate 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu {
+    /* Sidebar style */
+    position: fixed;
+    top: 0;
+    translate: -100%;
+    /* Initially the sidebar is hidden */
+    transition: translate 0.3s ease;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding-top: 3rem;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid #444;
+    text-shadow: 0;
+    transition: text-shadow 0.3s ease;
+}
+
+.menu li:hover {
+    text-shadow: 0px 0px 5px rgb(179, 179, 179);
+    transition: text-shadow 0.3s ease;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.menu.open {
+    /* Open the menu */
+    translate: 0;
+}
+
+.toggle.moveIcon {
+    /* Moves the menu's icon */
+    translate: -1rem -1rem;
+    transition: translate 0.3s ease, text-shadow 0.3s ease;
+    ;
+}

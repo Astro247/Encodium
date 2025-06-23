@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="logo-section">
+    <div class="title">
+        <h1 id="titleName"></h1>
+        <h3>Simple cryptography, for real security.</h3>
+    </div>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/favicon.png') }}" alt="logo-image">
+    </div>
+</div>
+<div class="description-container">
+    <div class="description-p">
+        <p>
+            RSA is a cornerstone of modern cryptography, offering a secure way to protect information by using two
+            mathematically related keys: one public for encryption and one private for decryption. Unlike traditional
+            methods that rely on a shared secret key, RSA eliminates the need to transmit decryption keys over insecure
+            channels—greatly reducing the risk of interception.
+        </p>
+        <p>
+            Without public-key systems like RSA, data protection depends on symmetric encryption, which requires that
+            both sender and receiver share the same secret key. This shared-key approach creates a critical
+            vulnerability: if the key is intercepted during transmission, the entire communication can be compromised.
+            RSA overcomes this by allowing anyone to encrypt data with the recipient's public key, while only the
+            recipient can decrypt it using their private key.
+        </p>
+        <p>
+            In addition to securing communications, RSA also enables digital signatures, ensuring both the authenticity
+            and integrity of a message. A message signed with a private key can be verified by anyone with access to the
+            corresponding public key, proving its origin and confirming it has not been tampered with. This makes RSA
+            not only efficient for confidentiality but essential for establishing trust in financial systems, secure
+            logins, and digital certificates across the internet.
+        </p>
+    </div>
+</div>
+<div class="endHome">
+    <div id="credits">
+        <h3 class="endTitle">Credits</h3>
+        <h3 class="info">Encodium Developer: Manuel Sarti</h3>
+        <h3 class="info">Github Profile: <a href="https://github.com/Astro247">Astro247</a></h3>
+    </div>
+    <div id="contacts">
+        <h3 class="endTitle">Contacts</h3>
+        <h3 class="info">Gmail: manuel.sarti36@gmail.com</h3>
+        <h3 class="info">Linkedin: <a href="https://www.linkedin.com/in/manuel-sarti-9b2489282/">Manuel
+                Sarti</a></h3>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock content %}

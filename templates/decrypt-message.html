@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 id="titleName"></h1>
+<div class="outerContainer">
+    <div class="innerContainer">
+        <div class="inputArea">
+            <h2>Input</h2>
+            <textarea id="encryptMessage" placeholder="Insert Encrypted Text.."></textarea>
+            <div class="keyArea">
+                <input type="text" id="n" class="keyComp" placeholder="Product n..">
+                <input type="text" id="d" class="keyComp" placeholder="Private Key Component d..">
+            </div>
+        </div>
+        <div class="outputArea">
+            <h2>Output</h2>
+            <textarea id="textOutput" placeholder="Decrypted Text.." readonly></textarea>
+            <button id="DecMessage">Decrypt</button>
+        </div>
+    </div>
+</div>
+<div class="explanation-container">
+    <div class="explanation-p">
+        <p>To decrypt a message, which has been encrypted using a specific public key (<span class="n">n</span>, <span
+                class="e">e</span>), it is necessary to possess the corresponding private key
+            (<span class="n">n</span>, <span class="d">d</span>).
+        </p>
+
+        <p>The original character, converted into its ASCII representation <span class="m">m</span>, is obtained by
+            raising the encrypted character <span class="c">c</span> to the power of <span class="d">d</span> (the
+            private exponent), and then computing the result modulo <span class="n">n</span>.</p>
+        <p>
+            This operation can be expressed mathematically as:
+        </p>
+        <h3> $$ m = c^d \:\: mod \:\: n $$ </h3>
+        <p>
+            After repeating the following operation for each number, the result is a sequence of ASCII values that, once
+            converted into their corresponding characters, reconstructs the original human-readable message.
+        </p>
+    </div>
+</div>
+<!--Import MathJax (Latex)-->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="{{ url_for('static', filename='js/decrypt-message-title.js') }}"></script>
+<script src="{{ url_for('static', filename='js/decrypt-message.js') }}"></script>
+{% endblock content %}

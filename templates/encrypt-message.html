@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 id="titleName"></h1>
+<div class="outerContainer">
+    <div class="innerContainer">
+        <div class="inputArea">
+            <h2>Input</h2>
+            <textarea id="textInput" placeholder="Insert Text to Encrypt.."></textarea>
+            <div class="keyArea">
+                <input type="text" id="n" class="keyComp" placeholder="Product n..">
+                <input type="text" id="e" class="keyComp" placeholder="Public Key Component e..">
+            </div>
+        </div>
+        <div class="outputArea">
+            <h2>Output</h2>
+            <textarea id="textOutput" placeholder="Encrypted Text.." readonly></textarea>
+            <button id="EncMessage">Encrypt</button>
+        </div>
+    </div>
+</div>
+<div class="explanation-container">
+    <div class="explanation-p">
+        <p>
+            To encrypt a message using the RSA system, it is essential to first transform the textual content into a
+            numerical format. This is because the RSA algorithm operates strictly on integers through mathematical
+            operations involving modular exponentiation.
+        </p>
+
+        <p>
+            If the message to be encrypted is a string, the first step is to split it into individual characters.
+            Each character is then converted into its corresponding numerical value using the ASCII table.
+        </p>
+
+        <p>
+            Once the numerical representation of the message is obtained, the actual RSA encryption is applied.
+            The encrypted character <span class="c">c</span> is obtained by raising the original character,
+            converted to its ASCII value <span class="m">m</span>,
+            to the power of the public exponent <span class="e">e</span>,
+            and then computing the result modulo <span class="n">n</span>, where <span class="n">n</span> is the
+            product of the two prime numbers used to generate the RSA keys.
+        </p>
+
+        <h3> $$ c = m^e \:\: mod \:\: n $$ </h3>
+
+        <p>
+            The result <span class="c">c</span> is an encrypted number representing the original character. This
+            process is
+            repeated for every character in the message.
+        </p>
+    </div>
+</div>
+<!--Import MathJax (Latex)-->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="{{ url_for('static', filename='js/encrypt-message-title.js') }}"></script>
+<script src="{{ url_for('static', filename='js/encrypt-message.js') }}"></script>
+{% endblock content %}

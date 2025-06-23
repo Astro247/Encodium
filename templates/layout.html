@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    {% if page == 'home' %}
+    <title>Encodium</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    {% endif %}
+    {% if page == 'RSA-Keys' %}
+    <title>Encodium | RSA Keys</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rsa-keys.css') }}">
+    {% endif %}
+    {% if page == 'encrypt' %}
+    <title>Encodium | Encrypt Message</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/encrypt-message.css') }}">
+    {% endif %}
+    {% if page == 'decrypt' %}
+    <title>Encodium | Decrypt Message</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/decrypt-message.css') }}">
+    {% endif %}
+</head>
+
+<body>
+
+    <button id="menuToggle" class="toggle">☰</button>
+    <nav id="sideMenu" class="menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/RSA-Keys">RSA Keys</a></li>
+            <li><a href="/encrypt-message">Encrypt Message</a></li>
+            <li><a href="/decrypt-message">Decrypt Message</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}{% endblock content %}
+
+    <script src="{{ url_for('static', filename='js/layout.js') }}"></script>
+</body>
+
+</html>
