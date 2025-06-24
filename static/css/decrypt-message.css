@@ -4,6 +4,8 @@ body {
     background-size: cover;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
+    max-width: 100%;
+    height: auto;
 }
 
 h1 {
@@ -27,6 +29,7 @@ h1 {
     border: solid 4px black;
     border-radius: 1rem;
     padding: 2rem;
+    flex-wrap: wrap;
 }
 
 .inputArea {
@@ -121,6 +124,8 @@ textarea:focus {
     opacity: 0.9;
     margin: 0;
     margin-top: 5rem;
+    max-width: 100%;
+    height: auto;
 }
 
 .explanation-p {
@@ -128,8 +133,8 @@ textarea:focus {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    margin-left: 30rem;
-    margin-right: 30rem;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .explanation-p p {

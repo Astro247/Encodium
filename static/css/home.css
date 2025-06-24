@@ -3,6 +3,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
+    max-width: 100%;
+    height: auto;
 }
 
 .logo-section {
@@ -40,12 +42,16 @@ body {
 
 .logo img {
     margin-left: 5rem;
+    max-width: 100%;
+    height: auto;
 }
 
 .description-container {
     background-color: rgb(39, 39, 39);
     opacity: 0.9;
     margin: 0;
+    max-width: 100%;
+    height: auto;
 }
 
 .description-p {
@@ -56,8 +62,8 @@ body {
 .description-p p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
-    margin-left: 20rem;
-    margin-right: 20rem;
+    margin-left: 20%;
+    margin-right: 20%;
     font-size: 2rem;
 }
 
@@ -120,4 +126,73 @@ body {
     color: white;
     text-shadow: 0px 0px 5px rgb(179, 179, 179);
     transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .logo-section {
+        margin: 6rem 2rem 8rem 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo img {
+        margin: 2rem 0 0 0;
+        max-width: 150px;
+        height: auto;
+    }
+
+    .title h1 {
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .title h3 {
+        font-size: 1.25rem;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .description-p p {
+        margin: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .endHome {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .title h1 {
+        font-size: 3rem;
+    }
+
+    .title h3 {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+
+    .description-p p {
+        font-size: 0.95rem;
+        margin: 1rem;
+    }
+
+    .endTitle {
+        font-size: 1.2rem;
+    }
+
+    .info {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .endHome {
+        padding: 1rem 0;
+    }
 }
